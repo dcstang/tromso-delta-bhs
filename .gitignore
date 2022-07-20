@@ -148,3 +148,13 @@ cython_debug/
 .csv
 .rds
 .xlsx
+
+# data folder
+data/*
+bhs_trajectory/
+bp_clustering/
+figures/
+hdl_clustering/
+notes/
+overall_eda/
+tables/
