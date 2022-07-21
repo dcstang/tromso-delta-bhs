@@ -49,7 +49,7 @@ def lasso_stability(df, train_cols, outcome_col, test_set_ratio, n_iter=1):
         returns a pandas DataFrame with number of columns as iterations
     """
 
-    with progressbar.ProgressBar(max_value=n_iter) as bar:
+    with progressbar.ProgressBar(max_value=n_iter+1) as bar:
 
         stabilityAnalysisDf = pd.DataFrame(
             {"variable":train_cols,
@@ -68,8 +68,9 @@ def lasso_stability(df, train_cols, outcome_col, test_set_ratio, n_iter=1):
             stabilityAnalysisDf.loc[:,n] = coefficients
             bar.update(n)
 
-        stabilityAnalysisDf["pctSelected"] = stabilityAnalysisDf.loc[:,1:].gt(0).sum(axis=1).div(stabilityAnalysisDf.shape[1]-1).mul(100)
-        stabilityAnalysisDf.sort_values(by="pctSelected", ascending=False, inplace=True)
+        finalStabilityAnalysisDf = stabilityAnalysisDf.copy()
+        finalStabilityAnalysisDf["pctSelected"] = finalStabilityAnalysisDf.loc[:,1:].gt(0).sum(axis=1).div(finalStabilityAnalysisDf.shape[1]-1).mul(100)
+        finalStabilityAnalysisDf.sort_values(by="pctSelected", ascending=False, inplace=True)
         bar.update(n+1)
 
     return stabilityAnalysisDf
