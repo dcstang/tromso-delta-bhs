@@ -1,0 +1,114 @@
+5 points for most healthy intake quintile
+
+==== LOW FAT DAIRY ====
+
+spread type 
+na                                 -> 1
+1	Butter/spreadable butter       -> 2
+2	Flora Pro-Active/Benecol       -> 3
+3	Other type of spread/margarine -> 4
+0	Never/rarely use spread        -> 5
+
+milk consumed
+1	Full cream               -> 2
+2	Semi-skimmed             -> 3     
+3	Skimmed                  -> 4
+4	Soya                     -> 3
+5	Other type of milk       -> 1
+6	Never/rarely have milk   -> 5
+
+==== RED MEAT ====
+
+pork intake /processed meat /lamb_mutton
+0	Never                    -> 5
+1	Less than once a week    -> 4
+2	Once a week              -> 3
+3	2-4 times a week         -> 2
+4	5-6 times a week         -> 1
+5	Once or more daily       -> 1
+
+
+==== GRAINS =====
+
+bread type
+1	White                    -> 3
+2	Brown                    -> 4
+3	Wholemeal or wholegrain  -> 5
+4	Other type of bread      -> 2
+NA                           -> 1
+
+cereal type
+1	Bran cereal (e.g. All Bran, Branflakes) -> 4
+2	Biscuit cereal (e.g. Weetabix)          -> 3
+3	Oat cereal (e.g. Ready Brek, porridge)  -> 4
+4	Muesli                                  -> 5
+5	Other (e.g. Cornflakes, Frosties)       -> 2
+NA                                          -> 1
+
+==== SODIUM =====
+
+salt added
+1	Never/rarely  -> 5
+2	Sometimes     -> 4
+3	Usually       -> 3
+4	Always        -> 2
+NA                -> 1
+
+
+===== FRUIT =====
+===== VEGE =====
+
+both of these use a quintile based on amount of intake
+# vege intake in teaspoons
+# cereal intake in bowls/week
+# bread intake in slices/week
+# -10 < 1 ie. 0.5 teaspoon
+# -3 / -1 = NA
+
+
+cooked_vegetable_intake.0.0
+[ 2.   3.   4.   1.   0.   5.  10.   6.   nan  8.   0.5  9.   7.  12.
+ 20.  14.  42.  15.  30.  13.  16.  21.  32.  25.  35.  18. ]
+raw_vegetable_intake.0.0
+[ 0.   1.   2.   3.   4.   0.5  5.  10.   6.   nan  7.   9.  20.   8.
+ 15.  12.  30.  33.  50.  25.  22.  13.  32.  28.  14. ]
+fresh_fruit_intake.0.0
+[ 2.   0.5  3.   0.   4.   1.   6.   7.   5.  12.  10.   8.   nan  9.
+ 40.  11.  20.  23.  33.  15.  22. ]
+dried_fruit_intake.0.0
+[ 0.   1.   0.5  4.   6.  20.   2.   5.   3.  10.   7.  12.   8.   nan
+  9.  15.  13.  26.  11.  30.  16.  14.  17.  21.  40. ]
+  
+  non_oily_fish_intake.0.0
+[ 1.  3.  4.  2.  0. nan  5.]
+processed_meat_intake.0.0
+[ 3.  1.  2.  4.  5.  0. nan]
+poultry_intake.0.0
+[ 3.  2.  1.  0.  4.  5. nan]
+beef_intake.0.0
+[ 2.  1.  3.  0. nan  4.  5.]
+lamb_mutton_intake.0.0
+[ 1.  2.  0.  3. nan  5.  4.]
+pork_intake.0.0
+[ 1.  2.  3.  0. nan  4.  5.]
+cheese_intake.0.0
+[ 1.  3.  4.  2.  0.  5. nan]
+milk_type_used.0.0
+[ 2.  3.  1.  6.  5.  4. nan]
+
+bread_intake.0.0
+[ 10.    4.   28.    8.   14.    2.   12.   24.   21.    nan  20.   16.
+   1.    7.   30.    5.    6.   15.    3.   13.   40.    9.   49.   18.
+  33.   25.    0.   11.    0.5  34.   42.   35.   19.   17.   22.   60.
+  45.   50.   32.   70.   44.   26.   41.   80.   36.   23.   48.   84.
+  57.   29.   46.   56.   47.   38.   37.   39.   27.   65.  110.   31.
+  52.  140.   90. ]
+bread_type.0.0
+[ 3.  2.  1.  4. nan]
+cereal_intake.0.0
+[ 3.   7.   6.   2.   0.   0.5  4.   5.  10.   1.  14.   8.   nan  9.
+ 12.  25.  11.  18.  21.  30.  28.  15. ]
+cereal_type.0.0
+[ 1.  4.  2.  5. nan  3.]
+salt_added_to_food.0.0
+[ 2.  1.  4.  3. nan]

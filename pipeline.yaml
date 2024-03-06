@@ -1,0 +1,242 @@
+tasks:
+  - source: 01_data_processing/0a_merge_outcome.r
+    name: Merge UKBB raw with outcomes
+    product:
+      nb: output/01_data_processing/0a_merge_outcome.html
+      data: data/processed_data/01_ukbb_outcomes.parquet
+
+  - source: 01_data_processing/0b_pull_behaviours.py
+    name: Merge additional behaviours
+    product:
+      nb: output/01_data_processing/0b_pull_behaviours.html
+      data: data/processed_data/02_ukbb_outcome.parquet
+
+  - source: 01_data_processing/0c_expert_variable_selection.py
+    name: Expert variable selection
+    product:
+      nb: output/01_data_processing/0c_expert_variable_selection.html
+      data: data/processed_data/03_ukbb_outcome_trimmed.parquet
+
+  - source: 01_data_processing/0d_pull_dietary.py
+    name: Pull dietary variables
+    product:
+      nb: output/01_data_processing/0d_pull_dietary.html
+      data: data/processed_data/04_ukbb_outcome_trimmed_diet.parquet
+
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (Complete Cases)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_complete_cases.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_complete_cases.parquet
+    params:
+      complete_cases: True 
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: False
+
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (Complete Cases n Lower Quartile Scored)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_lq_complete_cases.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_lq_complete_cases.parquet
+    params:
+      complete_cases: True 
+      biomarker_lower_quartile_scored: True
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: False
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (KNN Impute n Lower Quartile Scored)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_lq_knn_impute.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_lq_knn_impute.parquet
+    params:
+      complete_cases: False
+      biomarker_lower_quartile_scored: True
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: True
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (KNN Impute only)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_knn_impute.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_knn_impute.parquet
+    params:
+      complete_cases: False
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: True
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (Complete Cases n PCA BHS)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_complete_cases_pca.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca.parquet
+    params:
+      complete_cases: True
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: True
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: False
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (KNN Impute n PCA BHS)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_knn_impute_pca.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca.parquet
+    params:
+      complete_cases: False
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: True
+      continuous_pca_subsystem: False
+      continuous_pca_subsystem_scaled: False
+      knn_impute: True
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (Complete Cases n PCA Subsystem BHS)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_complete_cases_pca_subsystem.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca_subsystem.parquet
+    params:
+      complete_cases: True
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: True
+      continuous_pca_subsystem_scaled: False
+      knn_impute: False
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (KNN Impute n PCA Subsystem BHS)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_knn_impute_pca_subsystem.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca_subsystem.parquet
+    params:
+      complete_cases: False
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: True
+      continuous_pca_subsystem_scaled: False
+      knn_impute: True
+      
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (Complete Cases n PCA Subsystem BHS Scaled)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_complete_cases_pca_subsystem_scaled.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca_subsystem_scaled.parquet
+    params:
+      complete_cases: True
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: True
+      continuous_pca_subsystem_scaled: True
+      knn_impute: False
+  
+  - source: 01_data_processing/0e_delta_bhs.py
+    name: Calculate BHS (KNN Impute n PCA Subsystem BHS Scaled)
+    product:
+      nb: output/01_data_processing/0e_delta_bhs_knn_impute_pca_subsystem_scaled.html
+      data: data/processed_data/05_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca_subsystem_scaled.parquet
+    params:
+      complete_cases: False
+      biomarker_lower_quartile_scored: False
+      continuous_pca_biomarker: False
+      continuous_pca_subsystem: True
+      continuous_pca_subsystem_scaled: True
+      knn_impute: True
+  
+  - source: 01_data_processing/0f_dash_score.py
+    name: Compute DASH
+    product:
+      nb: output/01_data_processing/0f_dash_score.html
+      data_completeCases_noLowerScore: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_complete_cases_dash.parquet
+      data_completeCases_yesLowerScore: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_lq_complete_cases_dash.parquet
+      data_knnImpute_yesLowerScore: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_lq_knn_impute_dash.parquet
+      data_knnImpute_noLowerScore: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_knn_impute_dash.parquet
+      data_completeCases_pca: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca_dash.parquet
+      data_knnImpute_pca: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca_dash.parquet
+      data_completeCases_pca_subsystem: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca_subsystem_dash.parquet
+      data_knnImpute_pca_subsystem: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca_subsystem_dash.parquet
+      data_completeCases_pca_subsystem_scaled: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_complete_cases_pca_subsystem_dash_scaled.parquet
+      data_knnImpute_pca_subsystem_scaled: data/processed_data/06_ukbb_outcome_trimmed_diet_bhs_knn_impute_pca_subsystem_dash_scaled.parquet
+      
+  - source: 02_eda/0a_distribution_eda.py
+    name: BHS Exploratory Plots
+    product:
+      nb: output/02_eda/0a_distribution_eda.html
+  
+  - source: 02_eda/0b_score_diagnostics.py
+    name: BHS Diagnostics
+    product:
+      nb: output/02_eda/0b_score_diagnostics.html
+  
+  - source: 02_eda/0c_table1.py
+    name: Run tableOnes
+    product:
+      nb: output/02_eda/0c_table1.html
+      
+  - source: 02_eda/0d_scores_correlation.py
+    name: Scores correlations
+    product:
+      nb: output/02_eda/0d_scores_correlation.html
+      
+  - source: 03_univariate/0a_lm_behaviours.py
+    name: Univariate analysis on behaviours
+    product:
+      nb: output/03_univariate/0a_lm_behaviours.html
+      
+  - source: 03_univariate/0b_manhattan_plot.py
+    name: Univariate analysis manhattan plots
+    product:
+      nb: output/03_univariate/0b_manhattan_plot.html
+      
+  - source: 04_lasso_multivariate/0a_sharp_data_source.py
+    name: Sharp data source
+    product:
+      nb: output/04_lasso_multivariate/01_sharp_data_source.html
+
+  - source: 04_lasso_multivariate/0b_sharp_r_submitJob.sh
+    name: Sharp stability selection
+    product:
+      output_o: output/04_lasso_multivariate/0b_rsharp_job_output.txt
+    params:
+      resources_:
+        job_script: 04_lasso_multivariate/0c_sharp_r_jobscript.sh
+        r_script: 04_lasso_multivariate/0d_rsharp.r
+
+  - source: 04_lasso_multivariate/0e_selection_proportion.py
+    name: Sharp selection proportions
+    product:
+      nb: output/04_lasso_multivariate/0e_selection_proportion.html
+        
+  - source: 05_outcome/0a_cox_regression.py
+    name: Cox Regression
+    product:
+      nb: output/05_outcome/0a_cox_regression.html
+  
+  - source: 05_outcome/0b_viz_hazardratios.py
+    name: Hazard ratios forest plot
+    product:
+      nb: output/05_outcome/0b_viz_hazardratios.html
+
+  - source: 05_outcome/0c_cstat_r_submitJob.sh
+    name: Models cstat
+    product:
+      output_o: output/05_outcome/0d_cstat_job_output.txt
+    params:
+      resources_:
+        job_script: 05_outcome/0d_cstat_r_jobscript.sh
+        r_script: 05_outcome/0e_cstat.r
+        
+#   - source: 06_validation/zip_outputs.sh
+#     name: Zip all figures and tables
+#     product:
+#       output_o: output/06_validation/zip_output_echo.txt

@@ -1,0 +1,18 @@
+Process for population selection and processing
+
+1.
+Data-Field 53
+Description:	Date of attending assessment centre
+
+Instance 0, date of recruitment
+Instance 1, date of repeat assessment
+
+2. 
+Pull in outcomes (CAD, CVD, Cancer)
+DONE: look into ICD and 'codes' use across CAD and CVD categories  
+DONE: nail down proper ICD-10, 9 and codes
+
+3. Pull in behaviours 
+4. Compute DASH score
+5. Calculate delta BHS scores
+

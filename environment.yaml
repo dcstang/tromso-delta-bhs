@@ -1,0 +1,25 @@
+name: ploomber
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - ploomber
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - pyarrow
+  - jupyter
+  - pyreadr
+  - openpyxl
+  - seaborn
+  - lifelines
+  - openpyxl
+  - missingno
+  - tableone
+  - r-essentials
+  - r-irkernel
+  - r-arrow
+  - progressbar2
+  - adjusttext

@@ -1,0 +1,10 @@
+../output/01_data_processing 
+../output/02_eda
+../output/03_univariate/figures
+../output/03_univariate/figures
+../output/04_lasso_multivariate/figures
+../output/04_lasso_multivariate/selection_props
+../output/04_lasso_multivariate/tables
+../output/05_outcome/cstat_tables
+../output/05_outcome/hazard_forest_plots
+../output/05_outcome/hazard_tables
